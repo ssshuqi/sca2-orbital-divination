@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>星轨的答案 | Orbital Divination Archive</title>
+    <link rel="stylesheet" href="style.css?v=imac-stable-layout" />
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://cdn.jsdelivr.net/npm/three@0.165.0/build/three.module.js",
+          "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.165.0/examples/jsm/"
+        }
+      }
+    </script>
+  </head>
+  <body class="intro-active">
+    <section id="introScene" class="intro-scene" aria-label="Opening Scene">
+      <header class="cover-nav" aria-label="cover navigation">
+        <div class="cover-nav-item">SCA-2 SPACE</div>
+        <div class="cover-nav-item cover-nav-optional">ORBITAL GLOSSARY</div>
+        <div class="cover-nav-item cover-nav-optional">INSPIRATION</div>
+        <div class="cover-nav-actions">
+          <button id="coverAboutTrigger" type="button">ABOUT</button>
+          <button id="coverHelpTrigger" type="button">HELP</button>
+        </div>
+      </header>
+      <div class="intro-frame" aria-hidden="true"></div>
+      <div class="intro-stars" aria-hidden="true"></div>
+      <div class="intro-orbit intro-orbit-a" aria-hidden="true"></div>
+      <div class="intro-orbit intro-orbit-b" aria-hidden="true"></div>
+      <div class="intro-orbit intro-orbit-c" aria-hidden="true"></div>
+      <div class="cover-code-collage" aria-hidden="true">
+        <pre>SCA-2 / ORBITAL TRACE
+90 MIN CYCLE / 16 DAILY LOOPS
+LODGE 01  XUAN   SIGNAL INIT
+LODGE 02  SHENG  ASCENT VECTOR
+LODGE 03  HENG   BALANCE FIELD
+LODGE 04  JING   REFLECTIVE RETURN
+LODGE 05  XI     QUIET WINDOW
+LODGE 06  XI     NARROW PASSAGE
+LODGE 07  HUI    LOW LIGHT INDEX
+LODGE 08  FENG   CROSSING EVENT
+
+SIGNAL / ORBIT / SHADOW / GATE
+CODE 0000 -> TRAJECTORY LIBRARY
+POINT 00-89 -> ANGULAR LODGE MAP
+HOUSE = FLOOR(ANGLE / TWO_PI * 16)
+
+SCA-2 / RESIDUAL TRAJECTORY FIELD
+ARTIFICIAL SKY / ORBITAL ORACLE
+LODGE 09  HUAN  IMAGE VARIANCE
+LODGE 10  MO    SILENT RECORD
+LODGE 11  QI    BRANCHING PATH
+LODGE 12  CHEN  PARTICLE TRACE
+LODGE 13  LIN   NEAR OBSERVATION
+LODGE 14  FAN   RETURN ROUTE
+LODGE 15  ZHUI  RELEASE WEIGHT
+LODGE 16  HUAN  CLOSED ORBIT</pre>
+      </div>
+      <div class="intro-plate" aria-hidden="true">
+        <svg viewBox="0 0 420 420" role="img" aria-label="rotating starplate">
+          <circle cx="210" cy="210" r="184"></circle>
+          <circle cx="210" cy="210" r="138"></circle>
+          <circle cx="210" cy="210" r="92"></circle>
+          <circle cx="210" cy="210" r="42"></circle>
+          <g class="intro-ticks">
+            <line x1="210" y1="24" x2="210" y2="48"></line>
+            <line x1="210" y1="24" x2="210" y2="40" transform="rotate(11.25 210 210)"></line>
+            <line x1="210" y1="24" x2="210" y2="48" transform="rotate(22.5 210 210)"></line>
+            <line x1="210" y1="24" x2="210" y2="40" transform="rotate(33.75 210 210)"></line>
+            <line x1="210" y1="24" x2="210" y2="48" transform="rotate(45 210 210)"></line>
+            <line x1="210" y1="24" x2="210" y2="40" transform="rotate(56.25 210 210)"></line>
+            <line x1="210" y1="24" x2="210" y2="48" transform="rotate(67.5 210 210)"></line>
+            <line x1="210" y1="24" x2="210" y2="40" transform="rotate(78.75 210 210)"></line>
+            <line x1="210" y1="24" x2="210" y2="48" transform="rotate(90 210 210)"></line>
+            <line x1="210" y1="24" x2="210" y2="40" transform="rotate(101.25 210 210)"></line>
+            <line x1="210" y1="24" x2="210" y2="48" transform="rotate(112.5 210 210)"></line>
+            <line x1="210" y1="24" x2="210" y2="40" transform="rotate(123.75 210 210)"></line>
+            <line x1="210" y1="24" x2="210" y2="48" transform="rotate(135 210 210)"></line>
+            <line x1="210" y1="24" x2="210" y2="40" transform="rotate(146.25 210 210)"></line>
+            <line x1="210" y1="24" x2="210" y2="48" transform="rotate(157.5 210 210)"></line>
+            <line x1="210" y1="24" x2="210" y2="40" transform="rotate(168.75 210 210)"></line>
+            <line x1="210" y1="24" x2="210" y2="48" transform="rotate(180 210 210)"></line>
+            <line x1="210" y1="24" x2="210" y2="40" transform="rotate(191.25 210 210)"></line>
+            <line x1="210" y1="24" x2="210" y2="48" transform="rotate(202.5 210 210)"></line>
+            <line x1="210" y1="24" x2="210" y2="40" transform="rotate(213.75 210 210)"></line>
+            <line x1="210" y1="24" x2="210" y2="48" transform="rotate(225 210 210)"></line>
+            <line x1="210" y1="24" x2="210" y2="40" transform="rotate(236.25 210 210)"></line>
+            <line x1="210" y1="24" x2="210" y2="48" transform="rotate(247.5 210 210)"></line>
+            <line x1="210" y1="24" x2="210" y2="40" transform="rotate(258.75 210 210)"></line>
+            <line x1="210" y1="24" x2="210" y2="48" transform="rotate(270 210 210)"></line>
+            <line x1="210" y1="24" x2="210" y2="40" transform="rotate(281.25 210 210)"></line>
+            <line x1="210" y1="24" x2="210" y2="48" transform="rotate(292.5 210 210)"></line>
+            <line x1="210" y1="24" x2="210" y2="40" transform="rotate(303.75 210 210)"></line>
+            <line x1="210" y1="24" x2="210" y2="48" transform="rotate(315 210 210)"></line>
+            <line x1="210" y1="24" x2="210" y2="40" transform="rotate(326.25 210 210)"></line>
+            <line x1="210" y1="24" x2="210" y2="48" transform="rotate(337.5 210 210)"></line>
+            <line x1="210" y1="24" x2="210" y2="40" transform="rotate(348.75 210 210)"></line>
+          </g>
+          <g class="intro-lodge-dots">
+            <circle cx="210" cy="56" r="2.2"></circle>
+            <circle cx="269" cy="68" r="2.2"></circle>
+            <circle cx="319" cy="101" r="2.2"></circle>
+            <circle cx="352" cy="151" r="2.2"></circle>
+            <circle cx="364" cy="210" r="2.2"></circle>
+            <circle cx="352" cy="269" r="2.2"></circle>
+            <circle cx="319" cy="319" r="2.2"></circle>
+            <circle cx="269" cy="352" r="2.2"></circle>
+            <circle cx="210" cy="364" r="2.2"></circle>
+            <circle cx="151" cy="352" r="2.2"></circle>
+            <circle cx="101" cy="319" r="2.2"></circle>
+            <circle cx="68" cy="269" r="2.2"></circle>
+            <circle cx="56" cy="210" r="2.2"></circle>
+            <circle cx="68" cy="151" r="2.2"></circle>
+            <circle cx="101" cy="101" r="2.2"></circle>
+            <circle cx="151" cy="68" r="2.2"></circle>
+          </g>
+          <g class="intro-surface-orbits">
+            <ellipse class="surface-orbit orbit-one" cx="210" cy="210" rx="238" ry="54"></ellipse>
+            <ellipse class="surface-orbit orbit-two" cx="210" cy="210" rx="232" ry="70"></ellipse>
+            <ellipse class="surface-orbit orbit-three" cx="210" cy="210" rx="224" ry="46"></ellipse>
+          </g>
+          <g class="intro-rays">
+            <line x1="210" y1="26" x2="210" y2="394"></line>
+            <line x1="26" y1="210" x2="394" y2="210"></line>
+            <line x1="80" y1="80" x2="340" y2="340"></line>
+            <line x1="340" y1="80" x2="80" y2="340"></line>
+            <line x1="139" y1="40" x2="281" y2="380"></line>
+            <line x1="281" y1="40" x2="139" y2="380"></line>
+            <line x1="40" y1="139" x2="380" y2="281"></line>
+            <line x1="40" y1="281" x2="380" y2="139"></line>
+          </g>
+        </svg>
+      </div>
+      <div class="cover-orbit-fragments" aria-hidden="true">
+        <span class="orbit-fragment fragment-a"></span>
+        <span class="orbit-fragment fragment-b"></span>
+        <span class="orbit-fragment fragment-c"></span>
+        <span class="orbit-dot dot-a"></span>
+        <span class="orbit-dot dot-b"></span>
+        <span class="orbit-dot dot-c"></span>
+        <span class="orbit-dot dot-d"></span>
+        <span class="orbit-dot dot-e"></span>
+      </div>
+      <div class="intro-copy cover-title-block">
+        <h1 class="cover-title">
+          <span>welcome to the</span>
+          <span>artificial sky of <em>SCA-</em></span>
+          <span><em>2</em> orbital divination</span>
+        </h1>
+      </div>
+      <div class="cover-meta">
+        <p>人工十六宿 / 轨道占卜系统</p>
+        <small>ARTIFICIAL SIXTEEN LODGES / ORBITAL ORACLE SYSTEM</small>
+      </div>
+      <button id="enterObservatory" class="intro-enter" type="button">
+        <span>ENTER OBSERVATORY</span>
+        <span>进入轨道观测场</span>
+      </button>
+    </section>
+
+    <section class="main-oracle-screen">
+      <header class="topbar">
+        <a class="brand" href="/" aria-label="SCA-2 ORBITAL DIVINATION">
+          <span>SCA-2 ORBITAL DIVINATION</span>
+          <small>轨道占卜系统</small>
+        </a>
+        <nav class="nav-meta top-nav" aria-label="project metadata">
+          <div class="about-menu" id="aboutMenu">
+            <button class="about-trigger" type="button" aria-describedby="aboutPopover">
+              项目简介 / ABOUT
+            </button>
+
+            <div class="about-popover" id="aboutPopover" role="tooltip">
+              <div class="about-popover-content">
+                <h3>项目简介 / ABOUT</h3>
+                <p>当人类不断将卫星送入轨道，夜空逐渐脱离单一的古老神话、星象传说与占卜想象，成为由技术、人造物和数据轨迹共同构成的新空间。</p>
+                <p>在古代，人们仰望星空，通过星宿、星盘和天象变化理解命运、时间与未知。星空曾经被视为一种遥远而神秘的秩序。今天，卫星、轨道和空间技术重新覆盖了这片天空。它们同样在高空运行，同样留下路径，也同样构成一种难以被普通人直接感知的系统。</p>
+                <p>SCA-2 ORBITAL DIVINATION 试图将古老的占卜仪式与当代卫星技术连接起来：如果过去的人通过星宿读取命运，那么在被人造卫星环绕的当代，我们是否也会发展出一种新的占卜方式？在作品中，卫星超出了通信、导航和观测工具的功能，被想象成一种新的神谕媒介。</p>
+                <p>作品的生成逻辑来自中国古代二十八宿。二十八宿建立在月亮巡天的周期之上，月亮在夜空中依次经过不同星区，由此形成“宿”的概念：宿既是天体运行的阶段，也是人们理解时间、方位与命运的一种象征系统。</p>
+                <p>本作品将这一古老逻辑转译到当代技术语境中，SCA-2 约每 90 分钟完成一次环地运行，一天大约完成 16 次循环。以卫星的运行周期为依据，进行数字化转译，生成一套新的十六宿系统。观星、问卜与解读，古代依托天象变化建立的占卜机制，被重新组织为一个数字星盘。</p>
+                <p>十六个宿岛象征不同的精神状态、问题倾向和未知暗示。用户通过轨道口令进入星盘系统，触发轨道扫描、宿岛锁定与签文翻牌，完成一次数字化的问卜过程。</p>
+                <p>作品并不试图去证明占卜的真实性。借用占卜这种形式，讨论人在技术时代面对未知时的心理需求。当复杂的技术系统变得越来越不可见，人们依然会寻找某种解释、回应和仪式。卫星轨道在这里既是科学数据，也被转化为一种带有神秘感的象征语言。</p>
+              </div>
+            </div>
+          </div>
+          <div class="help-menu" id="helpMenu">
+            <button class="help-trigger" type="button" aria-describedby="helpPopover">
+              使用说明 / HELP
+            </button>
+
+            <div class="help-popover" id="helpPopover" role="tooltip">
+              <div class="help-popover-header">
+                <span class="help-kicker">GUIDE</span>
+                <h3>如何使用轨道占卜系统</h3>
+                <p>SCA-2 ORBITAL DIVINATION 使用说明</p>
+              </div>
+
+              <ol class="help-steps">
+                <li>
+                  <span>01</span>
+                  <div>
+                    <strong>校准轨道口令</strong>
+                    <p>调整四位数字锁，或点击 RANDOMIZE 随机校准一组轨道口令。</p>
+                  </div>
+                </li>
+                <li>
+                  <span>02</span>
+                  <div>
+                    <strong>读取轨道</strong>
+                    <p>点击 READ ORBIT，系统将读取轨道残影并扫描十六宿岛。</p>
+                  </div>
+                </li>
+                <li>
+                  <span>03</span>
+                  <div>
+                    <strong>锁定宿岛</strong>
+                    <p>星盘会依次点亮宿岛，最终锁定一个与你本次口令对应的宿岛。</p>
+                  </div>
+                </li>
+                <li>
+                  <span>04</span>
+                  <div>
+                    <strong>启封签文</strong>
+                    <p>当右侧卡牌显示 ORACLE READY 时，点击卡牌翻开签文。</p>
+                  </div>
+                </li>
+                <li>
+                  <span>05</span>
+                  <div>
+                    <strong>进入宿位</strong>
+                    <p>点击星盘上的宿岛，可以进入对应宿位，近距离感受该宿岛的形态与象征；点击 BACK TO CHART 返回星盘。</p>
+                  </div>
+                </li>
+              </ol>
+
+              <div class="help-note">
+                五分钟无操作后，系统会自动回到封面待机页。
+              </div>
+            </div>
+          </div>
+          <button id="backToCoverButton" class="cover-return-button" type="button">返回封面 / COVER</button>
+        </nav>
+      </header>
+
+      <main class="workspace oracle-main-grid">
+        <section class="scene-panel" aria-label="二维星盘盘底与三维宿岛场域">
+          <div class="scene-glass">
+            <div id="scene-root"></div>
+            <div class="scanline-layer" aria-hidden="true"></div>
+            <div class="model-click-guide" id="modelClickGuide">
+              <div>
+                <strong>点击宿岛进入宿位</strong>
+                <small>ENTER LODGE</small>
+              </div>
+            </div>
+            <div id="lodgeHoverTooltip" class="lodge-hover-tooltip">进入此宿 / ENTER THIS LODGE</div>
+          </div>
+          <div class="scene-caption">
+            <span>STARPLATE / LODGE FIELD</span>
+            <span id="scene-status">standby</span>
+          </div>
+        </section>
+
+        <aside class="side-panel oracle-side-panel" aria-label="占卜结果">
+          <section class="result-module">
+            <div class="module-header">
+              <span>ORBITAL READING</span>
+              <span class="readout-actions">
+                <button id="return-button" class="return-button" type="button" hidden>返回星盘</button>
+                <span>DIVINATION CARD</span>
+              </span>
+            </div>
+            <div id="result-list" class="result-list">
+              <div class="oracle-card-wrap" id="oracleCardWrap">
+                <div class="oracle-card is-sealed" id="oracleCard">
+                  <div class="oracle-card-face oracle-card-back">
+                    <div class="oracle-back-label">SCA-2</div>
+                    <div class="oracle-back-title" id="oracleBackTitle">ORACLE SEALED</div>
+                    <div class="oracle-back-symbol">✦</div>
+                    <div class="oracle-back-text" id="oracleBackText">签文尚未启封</div>
+                    <div class="oracle-back-hint" id="oracleBackHint">请先校准轨道口令</div>
+                    <ol class="oracle-ritual-steps" aria-label="占卜步骤">
+                      <li><span>01</span> ORBITAL CODE</li>
+                      <li><span>02</span> SIGNAL LOCK</li>
+                      <li><span>03</span> LODGE REVEAL</li>
+                      <li><span>04</span> ORACLE OPEN</li>
+                    </ol>
+                  </div>
+
+                  <div class="oracle-card-face oracle-card-front">
+                    <div class="oracle-title">ORBITAL READING</div>
+                    <h2 class="oracle-lodge-name">第X宿｜宿名</h2>
+                    <div class="oracle-keywords">关键词：……</div>
+                    <div class="oracle-section">
+                      <span>签文</span>
+                      <p class="oracle-text">……</p>
+                    </div>
+                    <div class="oracle-section">
+                      <span>解读</span>
+                      <p class="oracle-meaning">……</p>
+                    </div>
+                    <div class="oracle-section">
+                      <span>今日建议</span>
+                      <p class="oracle-advice">……</p>
+                    </div>
+                    <div class="oracle-meta">
+                      <span>Orbit Fragment: XX</span>
+                      <span>Code: XXXX</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </aside>
+      </main>
+
+      <section class="orbital-control-bar" aria-label="轨道口令与系统状态">
+        <section class="weather-module control-info" aria-label="今日轨道状态">
+          <div class="module-header">
+            <span>TODAY'S ORBITAL WEATHER</span>
+            <span id="weather-code">--</span>
+          </div>
+          <div class="weather-readout">
+            <strong id="weather-title">CALCULATING FIELD</strong>
+            <p id="weather-text">正在以今日日期校准轨道天气。</p>
+          </div>
+        </section>
+
+        <section class="input-module control-lock" aria-label="轨道时间码输入">
+          <div class="module-header">
+            <span>ORBITAL LOCK</span>
+            <span>Signal / Orbit / Shadow / Gate</span>
+          </div>
+          <div class="control-lock-body">
+            <div class="digit-wheels" aria-label="四位数字滚轮">
+              <button class="digit-wheel" data-index="0" type="button" aria-label="第一位数字">
+                <span class="step step-up">+</span>
+                <strong>0</strong>
+                <span class="step step-down">-</span>
+              </button>
+              <button class="digit-wheel" data-index="1" type="button" aria-label="第二位数字">
+                <span class="step step-up">+</span>
+                <strong>0</strong>
+                <span class="step step-down">-</span>
+              </button>
+              <button class="digit-wheel" data-index="2" type="button" aria-label="第三位数字">
+                <span class="step step-up">+</span>
+                <strong>0</strong>
+                <span class="step step-down">-</span>
+              </button>
+              <button class="digit-wheel" data-index="3" type="button" aria-label="第四位数字">
+                <span class="step step-up">+</span>
+                <strong>0</strong>
+                <span class="step step-down">-</span>
+              </button>
+            </div>
+            <div class="digit-omens" id="digitOmens" aria-label="轨道口令数字解释"></div>
+          </div>
+        </section>
+
+        <section class="status-module control-status" aria-label="系统状态">
+          <div class="module-header">
+            <span>SYSTEM STATUS</span>
+            <span id="state-label">IDLE</span>
+          </div>
+          <p id="system-status-text" class="system-status-text">INITIALIZING ORBITAL FIELD...</p>
+          <button id="launch-button" class="launch-button" type="button">发射信号</button>
+        </section>
+      </section>
+    </section>
+
+    <section class="archive-section">
+      <section class="archive-strip" aria-label="历史轨迹说明与十六宿档案">
+        <div>
+          <h2>Historical Material</h2>
+          <p>
+            当前版本使用可替换的 SCA-2 历史轨迹样本结构，不接入实时卫星数据。
+            将真实采样点替换进 <code>data.js</code> 后，问签映射逻辑无需改动。
+          </p>
+        </div>
+        <ol id="house-archive" class="house-archive"></ol>
+      </section>
+
+      <section class="recent-strip" aria-label="最近三次占卜档案">
+        <div>
+          <h2>Recent Oracle Archive</h2>
+          <p>最近三次轨道问签将保存在本机浏览器中，用于回看本次展演中的采样痕迹。</p>
+        </div>
+        <ol id="recent-readings" class="recent-readings"></ol>
+      </section>
+    </section>
+
+    <footer class="site-disclaimer" id="siteDisclaimer">
+      <p>占卜内容仅供娱乐与艺术体验，请勿作为现实决策依据。</p>
+      <small>FOR ENTERTAINMENT AND ARTISTIC EXPERIENCE ONLY.</small>
+    </footer>
+
+    <div id="inspectOverlay" class="inspect-overlay hidden" aria-hidden="true">
+      <button id="backToChartButton" class="back-to-chart-button" type="button">
+        ← 返回星盘 / BACK TO CHART
+      </button>
+
+      <div class="inspect-info">
+        <div class="inspect-label">LODGE ENTRY</div>
+        <h2 id="inspectLodgeName">第九宿｜幻</h2>
+        <div class="inspect-subtitle">宿位显现</div>
+        <div id="inspectOrbitId">Orbit Fragment: 09</div>
+        <div id="inspectKeywords">关键词：边界 / 变形 / 未完成</div>
+      </div>
+    </div>
+
+    <script>
+      window.SoundManager = {
+        enabled: true,
+        unlocked: false,
+        sounds: {},
+
+        init() {
+          this.sounds = {
+            digit: this.createAudio("assets/sounds/digit-click.wav", 0.26)
+          };
+
+          const unlock = () => {
+            this.unlocked = true;
+            window.removeEventListener("pointerdown", unlock);
+            window.removeEventListener("keydown", unlock);
+          };
+
+          window.addEventListener("pointerdown", unlock, { once: true });
+          window.addEventListener("keydown", unlock, { once: true });
+        },
+
+        createAudio(src, volume = 0.35) {
+          const audio = new Audio(src);
+          audio.preload = "auto";
+          audio.volume = volume;
+          audio.addEventListener("error", () => {
+            console.warn("[SoundManager] Missing or failed sound:", src);
+          });
+          return audio;
+        },
+
+        play(name) {
+          if (!this.enabled || !this.unlocked) return;
+          const audio = this.sounds[name];
+          if (!audio) return;
+
+          try {
+            audio.currentTime = 0;
+            audio.play().catch(() => {});
+          } catch (error) {
+            console.warn("[SoundManager] play failed:", name, error);
+          }
+        },
+
+        toggle() {
+          this.enabled = !this.enabled;
+          return this.enabled;
+        }
+      };
+
+      window.SoundManager.init();
+
+      (() => {
+        const introScene = document.querySelector("#introScene");
+        const enterButton = document.querySelector("#enterObservatory");
+        const coverButton = document.querySelector("#backToCoverButton");
+        const aboutMenu = document.querySelector("#aboutMenu");
+        const aboutTrigger = document.querySelector(".about-trigger");
+        const aboutPopover = document.querySelector("#aboutPopover");
+        const helpMenu = document.querySelector("#helpMenu");
+        const helpTrigger = document.querySelector(".help-trigger");
+        const helpPopover = document.querySelector("#helpPopover");
+        const coverAboutTrigger = document.querySelector("#coverAboutTrigger");
+        const coverHelpTrigger = document.querySelector("#coverHelpTrigger");
+
+        enterButton?.addEventListener("click", () => {
+          introScene?.classList.add("is-exiting");
+          window.setTimeout(() => {
+            document.body.classList.remove("intro-active");
+            introScene?.setAttribute("hidden", "");
+          }, 900);
+        });
+
+        coverButton?.addEventListener("click", () => {
+          introScene?.removeAttribute("hidden");
+          introScene?.classList.remove("is-exiting");
+          document.body.classList.add("intro-active");
+        });
+
+        function setupTopPopover(menu, trigger, popover, otherPopover) {
+          if (!menu || !trigger || !popover) {
+            return;
+          }
+
+          if (popover.parentElement !== document.body) {
+            document.body.appendChild(popover);
+          }
+
+          let isPinnedOpen = false;
+
+          const openPopover = () => {
+            otherPopover?.classList.remove("is-open");
+            popover.classList.add("is-open");
+          };
+
+          const closePopover = () => {
+            isPinnedOpen = false;
+            popover.classList.remove("is-open");
+          };
+
+          trigger.addEventListener("mouseenter", openPopover);
+          trigger.addEventListener("focus", openPopover);
+
+          trigger.addEventListener("click", (event) => {
+            event.preventDefault();
+            event.stopPropagation();
+            otherPopover?.classList.remove("is-open");
+            isPinnedOpen = !popover.classList.contains("is-open");
+            popover.classList.toggle("is-open", isPinnedOpen);
+          });
+
+          popover.addEventListener("mouseenter", openPopover);
+
+          trigger.addEventListener("mouseleave", () => {
+            window.setTimeout(() => {
+              if (!isPinnedOpen && !popover.matches(":hover") && !trigger.matches(":hover")) {
+                closePopover();
+              }
+            }, 120);
+          });
+
+          popover.addEventListener("mouseleave", () => {
+            window.setTimeout(() => {
+              if (!isPinnedOpen && !popover.matches(":hover") && !trigger.matches(":hover")) {
+                closePopover();
+              }
+            }, 120);
+          });
+
+          document.addEventListener("click", (event) => {
+            if (!popover.contains(event.target) && !trigger.contains(event.target)) {
+              closePopover();
+            }
+          });
+
+          document.addEventListener("keydown", (event) => {
+            if (event.key === "Escape") {
+              closePopover();
+            }
+          });
+        }
+
+        setupTopPopover(aboutMenu, aboutTrigger, aboutPopover, helpPopover);
+        setupTopPopover(helpMenu, helpTrigger, helpPopover, aboutPopover);
+        setupTopPopover(coverAboutTrigger, coverAboutTrigger, aboutPopover, helpPopover);
+        setupTopPopover(coverHelpTrigger, coverHelpTrigger, helpPopover, aboutPopover);
+      })();
+    </script>
+    <script type="module" src="main.js?v=imac-stable-layout"></script>
+  </body>
+</html>
