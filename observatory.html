@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>星轨的答案 | SCA-2 Orbital Rituals</title>
+    <link rel="icon" type="image/svg+xml" href="assets/cards-r3/house01.svg" />
+    <link rel="preload" href="assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="assets/fonts/noto-sans-sc-ui.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="style.css?v=card-back-caption-20261126" />
+  </head>
+  <body class="intro-active">
+    <section id="introScene" class="intro-scene" aria-label="Opening Scene">
+      <header class="cover-nav">
+        <div class="cover-mark">SCA-2 SPACE</div>
+        <div>ORBITAL GLOSSARY</div>
+        <div>INSPIRATION</div>
+        <div class="cover-actions">
+          <button id="coverAboutTrigger" type="button">ABOUT</button>
+          <button id="coverHelpTrigger" type="button">HELP</button>
+        </div>
+      </header>
+      <div class="cover-orbit-map" aria-hidden="true">
+        <svg viewBox="0 0 640 640">
+          <circle cx="320" cy="320" r="238"></circle>
+          <circle cx="320" cy="320" r="184"></circle>
+          <circle cx="320" cy="320" r="120"></circle>
+          <circle cx="320" cy="320" r="48"></circle>
+          <ellipse cx="320" cy="320" rx="292" ry="72" class="cover-ellipse a"></ellipse>
+          <ellipse cx="320" cy="320" rx="276" ry="92" class="cover-ellipse b"></ellipse>
+          <line x1="320" y1="68" x2="320" y2="572"></line>
+          <line x1="68" y1="320" x2="572" y2="320"></line>
+        </svg>
+      </div>
+      <div class="cover-title-block">
+        <h1>
+          <span>welcome to the</span>
+          <span>artificial sky of <em>SCA-</em></span>
+          <span><em>2</em> orbital divination</span>
+        </h1>
+      </div>
+      <button id="enterObservatory" class="intro-enter" type="button" onclick="document.body.classList.remove('intro-active')">
+        <span>ENTER OBSERVATORY</span>
+        <span>进入轨道观测场</span>
+      </button>
+    </section>
+
+    <main id="app" class="app-shell" aria-label="SCA-2 Orbital Divination">
+      <header class="top-navigation">
+        <a class="brand-lockup" href="./" target="_top" aria-label="ORBITAL RITUALS">
+          <span class="brand-sigil" aria-hidden="true">
+            <svg viewBox="0 0 32 32">
+              <circle cx="16" cy="16" r="5"></circle>
+              <path d="M16 3v8M16 21v8M3 16h8M21 16h8"></path>
+              <path d="M7 7l6 6M19 19l6 6M25 7l-6 6M13 19l-6 6"></path>
+            </svg>
+          </span>
+          <span>
+            <strong>ORBITAL RITUALS</strong>
+            <small>技术时代的占卜仪式</small>
+          </span>
+        </a>
+        <nav class="ritual-nav" aria-label="primary">
+          <button class="is-active" type="button">RITUAL</button>
+          <button type="button">ARCHIVE</button>
+          <button type="button">JOURNAL</button>
+        </nav>
+        <div class="top-actions">
+          <span class="signal-online">SIGNAL ONLINE <i></i></span>
+        </div>
+      </header>
+
+      <section class="ritual-grid" aria-label="轨道占卜工作区" tabindex="0">
+        <aside class="left-column">
+          <div class="orbit-details" role="region" aria-label="轨道资料" tabindex="0">
+            <section class="intro-copy panel-block">
+              <h1>THE DIVINATION RITUAL<br />IN THE TECHNOLOGICAL AGE</h1>
+              <small>A SATELLITE ORACLE FOR PATTERNS BEYOND PERCEPTION.</small>
+            </section>
+
+            <section class="asset-module panel-block">
+              <div class="section-kicker">// ORBITAL ASSET</div>
+              <article class="asset-card">
+                <div class="asset-meta">
+                  <strong>SCA-2 / ORACLE PROBE</strong>
+                  <span>HISTORICAL ORBIT DATA</span>
+                </div>
+                <dl>
+                  <div><dt>ALT</dt><dd id="asset-alt">569 KM</dd></div>
+                  <div><dt>VEL</dt><dd id="asset-vel">7.62 KM/S</dd></div>
+                  <div><dt>STATUS</dt><dd>ARCHIVE</dd></div>
+                  <div><dt>ORBIT</dt><dd>90 MIN</dd></div>
+                </dl>
+                <div class="earth-card" aria-hidden="true">
+                  <svg viewBox="0 0 320 120">
+                    <defs>
+                      <linearGradient id="earthFade" x1="0" x2="1">
+                        <stop offset="0" stop-color="#d9ddd9"></stop>
+                        <stop offset="1" stop-color="#82909a"></stop>
+                      </linearGradient>
+                    </defs>
+                    <path d="M-10 118C35 58 102 26 172 36c63 9 112 41 158 82Z" fill="url(#earthFade)" opacity=".7"></path>
+                    <path d="M28 94c40-22 82-34 126-31 46 4 91 17 137 43" fill="none" stroke="rgba(255,255,255,.48)" stroke-width="1"></path>
+                    <path d="M75 82c26-7 54-8 86-2 24 5 50 12 82 13" fill="none" stroke="rgba(64,66,70,.24)" stroke-width="1"></path>
+                  </svg>
+                </div>
+              </article>
+            </section>
+          </div>
+
+          <section class="time-engine panel-block">
+            <div class="section-kicker">// TIME ENGINE</div>
+            <button
+              id="timeTrigger"
+              class="time-dial"
+              type="button"
+              aria-label="Capture local time and begin divination"
+            >
+              <svg viewBox="0 0 220 220" aria-hidden="true">
+                <circle cx="110" cy="110" r="92"></circle>
+                <circle cx="110" cy="110" r="78"></circle>
+                <g id="hourTicks"></g>
+              </svg>
+              <div class="time-readout">
+                <strong id="timeReadout">00:00</strong>
+                <span id="timeStatus">LOCAL TIME</span>
+                <small id="timeAction">CLICK TO DIVINE</small>
+              </div>
+            </button>
+            <button id="launch-button" class="sync-button" type="button">SYNC WITH ORBIT<br /><span>同步轨道</span></button>
+          </section>
+        </aside>
+
+        <section class="center-column">
+          <section class="orbital-map-panel">
+            <div class="orbital-stage">
+              <div class="orbital-disc" aria-hidden="true"></div>
+              <canvas id="orbitalCanvas" width="960" height="960" aria-label="3D 环形塔罗命运之轮"></canvas>
+            </div>
+            <div class="map-coordinates">
+              <span id="coordinateReadout">33.11° N&nbsp;&nbsp;&nbsp;98.11° W</span>
+              <i></i>
+            </div>
+          </section>
+
+          <section class="section-selector-panel">
+            <div class="section-kicker">// SIXTEEN DIVINATORY SECTIONS</div>
+            <div id="sectionSelector" class="section-selector" aria-label="十六宿选择栏">
+              <button class="section-chip" data-index="0" type="button" title="第1宿 / SAMPLE" aria-label="第1宿 / SAMPLE">
+                <span class="lodge-model-frame" aria-hidden="true"><img class="lodge-model" src="assets/cards-r3/house01.svg?v=cards-r3-20261018" alt="" /></span><strong>01</strong><span class="lodge-name">SAMPLE</span>
+              </button>
+              <button class="section-chip" data-index="1" type="button" title="第2宿 / LABEL" aria-label="第2宿 / LABEL">
+                <span class="lodge-model-frame" aria-hidden="true"><img class="lodge-model" src="assets/cards-r3/house02.svg?v=cards-r3-20261018" alt="" /></span><strong>02</strong><span class="lodge-name">LABEL</span>
+              </button>
+              <button class="section-chip" data-index="2" type="button" title="第3宿 / MATCH" aria-label="第3宿 / MATCH">
+                <span class="lodge-model-frame" aria-hidden="true"><img class="lodge-model" src="assets/cards-r3/house03.svg?v=cards-r3-20261018" alt="" /></span><strong>03</strong><span class="lodge-name">MATCH</span>
+              </button>
+              <button class="section-chip" data-index="3" type="button" title="第4宿 / WEIGHT" aria-label="第4宿 / WEIGHT">
+                <span class="lodge-model-frame" aria-hidden="true"><img class="lodge-model" src="assets/cards-r3/house04.svg?v=cards-r3-20261018" alt="" /></span><strong>04</strong><span class="lodge-name">WEIGHT</span>
+              </button>
+              <button class="section-chip" data-index="4" type="button" title="第5宿 / PROBABILITY" aria-label="第5宿 / PROBABILITY">
+                <span class="lodge-model-frame" aria-hidden="true"><img class="lodge-model" src="assets/cards-r3/house05.svg?v=cards-r3-20261018" alt="" /></span><strong>05</strong><span class="lodge-name">PROBABILITY</span>
+              </button>
+              <button class="section-chip" data-index="5" type="button" title="第6宿 / THRESHOLD" aria-label="第6宿 / THRESHOLD">
+                <span class="lodge-model-frame" aria-hidden="true"><img class="lodge-model" src="assets/cards-r3/house06.svg?v=cards-r3-20261018" alt="" /></span><strong>06</strong><span class="lodge-name">THRESHOLD</span>
+              </button>
+              <button class="section-chip" data-index="6" type="button" title="第7宿 / RANKING" aria-label="第7宿 / RANKING">
+                <span class="lodge-model-frame" aria-hidden="true"><img class="lodge-model" src="assets/cards-r3/house07.svg?v=cards-r3-20261018" alt="" /></span><strong>07</strong><span class="lodge-name">RANKING</span>
+              </button>
+              <button class="section-chip" data-index="7" type="button" title="第8宿 / RECOMMENDATION" aria-label="第8宿 / RECOMMENDATION">
+                <span class="lodge-model-frame" aria-hidden="true"><img class="lodge-model" src="assets/cards-r3/house08.svg?v=cards-r3-20261018" alt="" /></span><strong>08</strong><span class="lodge-name">RECOMMENDATION</span>
+              </button>
+              <button class="section-chip" data-index="8" type="button" title="第9宿 / BLIND SPOT" aria-label="第9宿 / BLIND SPOT">
+                <span class="lodge-model-frame" aria-hidden="true"><img class="lodge-model" src="assets/cards-r3/house09.svg?v=cards-r3-20261018" alt="" /></span><strong>09</strong><span class="lodge-name">BLIND SPOT</span>
+              </button>
+              <button class="section-chip" data-index="9" type="button" title="第10宿 / NOISE" aria-label="第10宿 / NOISE">
+                <span class="lodge-model-frame" aria-hidden="true"><img class="lodge-model" src="assets/cards-r3/house10.svg?v=cards-r3-20261018" alt="" /></span><strong>10</strong><span class="lodge-name">NOISE</span>
+              </button>
+              <button class="section-chip" data-index="10" type="button" title="第11宿 / BIAS" aria-label="第11宿 / BIAS">
+                <span class="lodge-model-frame" aria-hidden="true"><img class="lodge-model" src="assets/cards-r3/house11.svg?v=cards-r3-20261018" alt="" /></span><strong>11</strong><span class="lodge-name">BIAS</span>
+              </button>
+              <button class="section-chip" data-index="11" type="button" title="第12宿 / BLACK BOX" aria-label="第12宿 / BLACK BOX">
+                <span class="lodge-model-frame" aria-hidden="true"><img class="lodge-model" src="assets/cards-r3/house12.svg?v=cards-r3-20261018" alt="" /></span><strong>12</strong><span class="lodge-name">BLACK BOX</span>
+              </button>
+              <button class="section-chip" data-index="12" type="button" title="第13宿 / FIT" aria-label="第13宿 / FIT">
+                <span class="lodge-model-frame" aria-hidden="true"><img class="lodge-model" src="assets/cards-r3/house13.svg?v=cards-r3-20261018" alt="" /></span><strong>13</strong><span class="lodge-name">FIT</span>
+              </button>
+              <button class="section-chip" data-index="13" type="button" title="第14宿 / CONFIDENCE" aria-label="第14宿 / CONFIDENCE">
+                <span class="lodge-model-frame" aria-hidden="true"><img class="lodge-model" src="assets/cards-r3/house14.svg?v=cards-r3-20261018" alt="" /></span><strong>14</strong><span class="lodge-name">CONFIDENCE</span>
+              </button>
+              <button class="section-chip" data-index="14" type="button" title="第15宿 / FEEDBACK" aria-label="第15宿 / FEEDBACK">
+                <span class="lodge-model-frame" aria-hidden="true"><img class="lodge-model" src="assets/cards-r3/house15.svg?v=cards-r3-20261018" alt="" /></span><strong>15</strong><span class="lodge-name">FEEDBACK</span>
+              </button>
+              <button class="section-chip" data-index="15" type="button" title="第16宿 / EXCEPTION" aria-label="第16宿 / EXCEPTION">
+                <span class="lodge-model-frame" aria-hidden="true"><img class="lodge-model" src="assets/cards-r3/house16.svg?v=cards-r3-20261018" alt="" /></span><strong>16</strong><span class="lodge-name">EXCEPTION</span>
+              </button>
+            </div>
+          </section>
+        </section>
+
+        <aside class="right-column">
+          <section class="result-panel is-concealed">
+            <div class="result-card-back" role="status" aria-label="等待同步轨道，结果尚未揭示">
+              <span>ORBITAL RITUALS</span>
+              <svg viewBox="0 0 240 300" aria-hidden="true">
+                <circle cx="120" cy="150" r="92"/><circle cx="120" cy="150" r="76"/>
+                <ellipse cx="120" cy="150" rx="105" ry="34" transform="rotate(-45 120 150)"/>
+                <ellipse cx="120" cy="150" rx="105" ry="34" transform="rotate(45 120 150)"/>
+                <circle cx="120" cy="150" r="23"/><path d="M120 32v20m0 196v20M12 150h16m184 0h16"/>
+              </svg>
+              <div>AWAITING ALIGNMENT<small>等待轨道对齐</small></div>
+            </div>
+            <div class="result-heading">
+              <span>// DIVINATION RESULT</span>
+              <small id="signalState">SIGNAL ID: #000 · STANDBY</small>
+            </div>
+            <div id="resultIcon" class="result-icon" aria-hidden="true"></div>
+            <h2 id="resultName">AWAITING SIGNAL</h2>
+            <div class="result-section">
+              <span>INTERPRETATION</span>
+              <p id="resultInterpretation">点击 LOCAL TIME 捕获此刻，系统将生成时间种子并映射到十六宿分区。</p>
+            </div>
+            <div class="result-section">
+              <span>INFLUENCE</span>
+              <ul id="resultKeywords">
+                <li>Signal</li>
+                <li>Orbit</li>
+                <li>Archive</li>
+              </ul>
+            </div>
+            <div class="result-section">
+              <span>RECOMMENDED RITUAL</span>
+              <p id="resultAdvice">捕获一个真实时刻，等待轨道对齐。</p>
+            </div>
+            <button id="saveJournalButton" class="journal-button" type="button">SAVE TO JOURNAL<br /><span>保存记录</span></button>
+          </section>
+        </aside>
+      </section>
+
+      <div id="syncDock" class="sync-dock"></div>
+      <script>
+        // Place the action before the card data loads, and keep its focus across resizes.
+        {
+          const button = document.getElementById("launch-button");
+          const timeEngine = button.parentElement;
+          const dock = document.getElementById("syncDock");
+          const compact = matchMedia("(width < 1100px), (height < 700px)");
+          function placeButton() {
+            const container = compact.matches ? dock : timeEngine;
+            if (button.parentElement === container) return;
+            const focused = document.activeElement === button;
+            container.append(button);
+            if (focused) button.focus({ preventScroll: true });
+          }
+          placeButton();
+          compact.addEventListener("change", placeButton);
+        }
+      </script>
+      <footer class="system-status-bar">
+        <div>
+          <span>SYSTEM STATUS</span>
+          <strong id="system-status-text">All systems nominal</strong>
+        </div>
+        <div>
+          <span>ORBITAL ALIGNMENT</span>
+          <strong id="state-label">STABLE</strong>
+        </div>
+        <div class="signal-graph" aria-label="signal graph">
+          <span>SIGNAL GRAPH</span>
+          <svg viewBox="0 0 260 42" aria-hidden="true">
+            <path d="M3 24 C22 14 33 31 48 22 S74 15 91 23 118 32 136 21 163 11 181 22 208 31 226 21 246 18 257 24"></path>
+          </svg>
+        </div>
+        <div>
+          <span>NEXT ALIGNMENT</span>
+          <strong id="nextAlignment">02:17:33</strong>
+        </div>
+      </footer>
+    </main>
+
+    <div id="aboutPopover" class="floating-popover" hidden>
+      <h3>项目简介 / ABOUT</h3>
+      <p>当人类不断将卫星送入轨道，夜空逐渐脱离单一的古老神话、星象传说与占卜想象，成为由技术、人造物和数据轨迹共同构成的新空间。</p>
+      <p>SCA-2 ORBITAL DIVINATION 将古老的占卜仪式与当代卫星技术连接起来，生成一套以历史轨迹样本为材料的十六宿数字星盘。</p>
+      <p>作品并不试图证明占卜的真实性，而是借用占卜形式讨论人在技术时代面对未知时仍然需要解释、回应和仪式。</p>
+    </div>
+
+    <div id="helpPopover" class="floating-popover" hidden>
+      <h3>如何使用轨道占卜系统</h3>
+      <ol>
+        <li>调整四位时间引擎数字，形成轨道时间码。</li>
+        <li>点击 LOCAL TIME 捕获此刻，并开始轨道占卜。</li>
+        <li>星盘会锁定一个十六宿分区，右侧显示签文。</li>
+        <li>点击下方十六宿图标可查看对应宿位档案。</li>
+      </ol>
+      <p>五分钟无操作后，系统会自动回到封面待机页。</p>
+    </div>
+
+    <script>
+      window.SoundManager = {
+        enabled: true,
+        unlocked: false,
+        sounds: {},
+        init() {
+          this.sounds.digit = this.createAudio("assets/sounds/digit-click.wav", 0.24);
+          const unlock = () => {
+            this.unlocked = true;
+            window.removeEventListener("pointerdown", unlock);
+            window.removeEventListener("keydown", unlock);
+          };
+          window.addEventListener("pointerdown", unlock, { once: true });
+          window.addEventListener("keydown", unlock, { once: true });
+        },
+        createAudio(src, volume) {
+          const audio = new Audio(src);
+          audio.preload = "auto";
+          audio.volume = volume;
+          audio.addEventListener("error", () => console.warn("[SoundManager] Missing sound:", src));
+          return audio;
+        },
+        play(name) {
+          if (!this.enabled || !this.unlocked || !this.sounds[name]) return;
+          try {
+            const sound = this.sounds[name];
+            sound.currentTime = 0;
+            sound.play().catch(() => {});
+          } catch (error) {
+            console.warn("[SoundManager] play failed:", name, error);
+          }
+        }
+      };
+      window.SoundManager.init();
+    </script>
+    <script src="data.js?v=english-influence-20261020"></script>
+    <script src="fate-engine.js?v=local-time-trigger-20260828"></script>
+    <script src="main.js?v=prompt-result-reveal-20261126"></script>
+  </body>
+</html>
